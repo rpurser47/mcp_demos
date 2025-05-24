@@ -1,3 +1,7 @@
+[![Python](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/downloads/release/python-3130/)
+[![CI](https://github.com/rpurser47/mcp_demos/actions/workflows/python-ci.yml/badge.svg?branch=main)](https://github.com/rpurser47/mcp_demos/actions/workflows/python-ci.yml)
+[![codecov](https://codecov.io/gh/rpurser47/mcp_demos/branch/main/graph/badge.svg)](https://codecov.io/gh/rpurser47/mcp_demos)
+
 # MCP Weather Demo: High-Level Overview
 
 This project demonstrates a Model Context Protocol (MCP) server that exposes the National Weather Service (NWS) API as a resource, along with a demo application that enables conversational weather queries using an LLM (Large Language Model).
