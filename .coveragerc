@@ -1,0 +1,4 @@
+[run]
+omit =
+    mcp_nws/tests/*
+    */__init__.py

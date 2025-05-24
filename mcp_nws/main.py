@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query, HTTPException
-from mcp_schema import MCPResource, MCPResourceList, MCPWeatherResponse
-from nws_client import get_points, get_forecast, get_current_weather, geocode_location
+from mcp_nws.mcp_schema import MCPResource, MCPResourceList, MCPWeatherResponse
+from mcp_nws.nws_client import get_points, get_forecast, get_current_weather, geocode_location
 
 app = FastAPI(title="MCP NWS Server")
 
