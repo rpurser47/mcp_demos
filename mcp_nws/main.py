@@ -11,27 +11,18 @@ def list_resources():
             id="nws-weather",
             name="National Weather Service Weather",
             description="Get current and forecast weather for a given latitude and longitude.",
-            parameters={
-                "lat": "float",
-                "lon": "float",
-                "date": "str (optional, ISO date 'YYYY-MM-DD', 'today', 'tomorrow', or weekday name 'Monday'-'Sunday')"
-            },
+            parameters={"lat": "float", "lon": "float"},
             examples=[
-                {"query": "/resources/nws-weather?lat=42.36&lon=-71.06", "description": "Get weather for Boston, MA by coordinates."},
-                {"query": "/resources/nws-weather?lat=42.36&lon=-71.06&date=Friday", "description": "Get weather for Boston, MA for next Friday by coordinates."}
+                {"query": "/resources/nws-weather?lat=42.36&lon=-71.06", "description": "Get weather for Boston, MA by coordinates."}
             ]
         ),
         MCPResource(
             id="nws-weather-by-name",
             name="National Weather Service Weather by Location Name",
             description="Get current and forecast weather for a given US location name (city, state, or zip).",
-            parameters={
-                "location": "str (US city, state, or zip)",
-                "date": "str (optional, ISO date 'YYYY-MM-DD', 'today', 'tomorrow', or weekday name 'Monday'-'Sunday')"
-            },
+            parameters={"location": "str (US city, state, or zip)"},
             examples=[
-                {"query": "/resources/nws-weather-by-name?location=Boston,MA", "description": "Get weather for Boston, MA by name."},
-                {"query": "/resources/nws-weather-by-name?location=Boston,MA&date=Monday", "description": "Get weather for Boston, MA for next Monday by name."}
+                {"query": "/resources/nws-weather-by-name?location=Boston,MA", "description": "Get weather for Boston, MA by name."}
             ]
         )
     ]
