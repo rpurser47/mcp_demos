@@ -37,7 +37,11 @@ async def get_weather_resource(
     lon: float = Query(..., description="Longitude"),
     date: str = Query(None, description="Optional. ISO date 'YYYY-MM-DD', 'today', 'tomorrow', or weekday name 'Monday'-'Sunday'")
 ):
+    print(f"[DEBUG] [MCP] Received request: /resources/nws-weather?lat={lat}&lon={lon}&date={date}")
+    print(f"[DEBUG] /resources/nws-weather called with lat={lat}, lon={lon}, date={date}")
+    print("[DEBUG] Calling get_points...")
     points = await get_points(lat, lon)
+    print(f"[DEBUG] get_points result: {points}")
     if not points:
         return MCPWeatherResponse(
             location=f"{lat},{lon}",
@@ -122,7 +126,11 @@ async def get_weather_by_name(
     location: str = Query(..., description="US city, state, or zip"),
     date: str = Query(None, description="Optional. ISO date 'YYYY-MM-DD', 'today', 'tomorrow', or weekday name 'Monday'-'Sunday'")
 ):
+    print(f"[DEBUG] [MCP] Received request: /resources/nws-weather-by-name?location={location}&date={date}")
+    print(f"[DEBUG] /resources/nws-weather-by-name called with location={location}, date={date}")
+    print("[DEBUG] Calling geocode_location...")
     geo = await geocode_location(location)
+    print(f"[DEBUG] geocode_location result: {geo}")
     if not geo:
         return MCPWeatherResponse(
             location=location,

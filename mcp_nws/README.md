@@ -15,6 +15,17 @@ This project demonstrates a minimal Model Context Protocol (MCP) server that exp
    ```bash
    uvicorn main:app --reload
    ```
+3. Install Ollama with Llama 3.2
+This uses [Ollama](https://ollama.com/) to run the Llama 3.2 model on your machine.
+  - Follow the instructions for your platform at: https://ollama.com/download
+  - Get the Llama 3.2 model:
+    ```bash
+    ollama pull llama3.2
+    ```
+  - Run Ollama:
+    ```bash
+    ollama serve
+    ``` 
 
 ## Usage
 

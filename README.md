@@ -16,6 +16,36 @@ This project demonstrates a Model Context Protocol (MCP) server that exposes the
 - `PLAN.md` — The project plan and design rationale.
 
 ## Getting Started
+
+### 1. Download and Install Ollama (for Llama 2)
+- Visit [https://ollama.com/download](https://ollama.com/download) and follow the instructions for your operating system.
+- After installation, open a terminal and run:
+  ```sh
+  ollama pull llama2
+  ```
+  This will download the Llama 2 model for local use.
+
+### 2. Start the Ollama Server
+- In a terminal, run:
+  ```sh
+  ollama serve
+  ```
+  This will start the Ollama server on `localhost:11434` (the default port).
+
+### 3. Start the MCP Server
+- In your project root, start the MCP server (FastAPI/Uvicorn) with:
+  ```sh
+  uvicorn mcp_nws.main:app --reload
+  ```
+  This will start the MCP server on `localhost:8000`.
+
+### 4. Start the Demo App (Streamlit)
+- In your project root, run:
+  ```sh
+  streamlit run streamlit_app.py
+  ```
+  The app will be available at [http://localhost:8501](http://localhost:8501).
+
 For setup instructions, API endpoint documentation, and usage examples, see:
 
 👉 **[mcp_nws/README.md](./mcp_nws/README.md)**
