@@ -1,10 +1,39 @@
-[![Python](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/downloads/release/python-3130/)
-[![CI](https://github.com/rpurser47/mcp_demos/actions/workflows/python-ci.yml/badge.svg?branch=main)](https://github.com/rpurser47/mcp_demos/actions/workflows/python-ci.yml)
-[![codecov](https://codecov.io/gh/rpurser47/mcp_demos/branch/main/graph/badge.svg)](https://codecov.io/gh/rpurser47/mcp_demos)
+# Weather Chatbot (Llama 3.2 + MCP)
 
-# MCP Weather Demo: High-Level Overview
+A robust, maintainable Streamlit-based weather chatbot powered by local Llama 3.2 via Ollama and live weather data from your MCP server (National Weather Service API).
 
-This project demonstrates a Model Context Protocol (MCP) server that exposes the National Weather Service (NWS) API as a resource, along with a demo application that enables conversational weather queries using an LLM (Large Language Model).
+## Features
+- Natural chat interface with Streamlit
+- Local Llama 3.2 model (Ollama)
+- Tool-calling for live weather (via MCP server)
+- Modular, easy-to-extend codebase (LangGraph)
+
+## Setup
+1. Install Python 3.13+
+2. Clone this repo
+3. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+4. Start your MCP server (see `mcp_nws` directory)
+5. Start Ollama with Llama 3.2 model:
+   ```
+   ollama run llama3.2
+   ```
+6. Run the app:
+   ```
+   streamlit run streamlit_app.py
+   ```
+
+## Configuration
+- Edit `chatbot_system_prompt.md` to change the chatbot's behavior.
+- All weather queries require the MCP server running on `localhost:8000`.
+
+## Usage
+- Ask about the weather in any US location.
+- The bot will call the weather tool for live data and answer based on the result.
+
+---
 
 ## What You'll Find Here
 - **MCP Server**: A FastAPI-based server that provides structured access to current and forecast weather data from the NWS, with endpoints designed for both LLMs and traditional applications.

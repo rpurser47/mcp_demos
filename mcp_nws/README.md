@@ -11,9 +11,9 @@ This project demonstrates a minimal Model Context Protocol (MCP) server that exp
    ```bash
    pip install -r requirements.txt
    ```
-2. Run the server:
+2. Run the MCP server for the NWS weather resource:
    ```bash
-   uvicorn main:app --reload
+   uvicorn mcp_nws.main:app --reload
    ```
 3. Install Ollama with Llama 3.2
 This uses [Ollama](https://ollama.com/) to run the Llama 3.2 model on your machine.
@@ -24,8 +24,13 @@ This uses [Ollama](https://ollama.com/) to run the Llama 3.2 model on your machi
     ```
   - Run Ollama:
     ```bash
-    ollama serve
+    ollama serve # If it's not already running
+    ollama run llama3.2
     ``` 
+4. Run the App
+    ```bash
+    streamlit run app.py
+    ```
 
 ## Usage
 
